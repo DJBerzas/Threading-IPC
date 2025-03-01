@@ -32,13 +32,11 @@ public:
             t.join();
         }
 
-        // Print final balances
         std::cout << "Final Balances: Account A = " << accountA.getBalance()
             << ", Account B = " << accountB.getBalance() << std::endl;
     }
 };
 
-// Main function to run the program
 int main() {
     BankSystem bank(1000, 1000);
     bank.runTransactions();

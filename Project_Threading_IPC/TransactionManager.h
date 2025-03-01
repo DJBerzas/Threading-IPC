@@ -26,7 +26,7 @@ public:
         else {
             std::cout << "Thread " << id << " attempting a DEADLOCK RISK transfer from Account B to A...\n";
 
-            // FIXED: Ensures locks are acquired in a consistent order to prevent deadlocks
+            // Ensure locks are acquired in a consistent order to prevent deadlocks
             std::lock(from.getMutex(), to.getMutex());
             std::lock_guard<std::mutex> lockA(from.getMutex(), std::adopt_lock);
             std::lock_guard<std::mutex> lockB(to.getMutex(), std::adopt_lock);

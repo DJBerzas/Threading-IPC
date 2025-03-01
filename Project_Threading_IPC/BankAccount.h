@@ -16,7 +16,7 @@ public:
         return balance;
     }
 
-    // FIXED: Optional mutex locking to avoid nested locks
+    //  Optional mutex locking 
     void updateBalance(int amount, bool alreadyLocked = false) {
         if (!alreadyLocked) {
             std::lock_guard<std::mutex> lock(account_mutex);
